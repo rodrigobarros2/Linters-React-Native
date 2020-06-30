@@ -1,0 +1,70 @@
+1- colocar no .editorconfig
+
+root = true
+
+[*]
+
+indent_style = tab
+indent_size = 4
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+2- deletar o arquivos eslint.js já existente 
+
+3 - npm i eslint -D
+
+4- npx eslint --init
+
+5- npm i prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+
+6- colocar no aquivo eslint.js
+
+module.exports = {
+	env: {
+		es6: true,
+	},
+	extends: [
+		'plugin:react/recommended',
+		'airbnb',
+		'prettier',
+		'prettier/react',
+	],
+	globals: {
+		Atomics: 'readonly',
+		SharedArrayBuffer: 'readonly',
+		__DEV__: 'readonly',
+	},
+	parser: 'babel-eslint',
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+		},
+		ecmaVersion: 2018,
+		sourceType: 'module',
+	},
+	plugins: ['react', 'prettier', 'react-hooks'],
+	rules: {
+		'prettier/prettier': 'error',
+		'react/jsx-filename-extension': ['warn', {extensions: ['.jsx', '.js']}],
+		'import/prefer-default-export': 'off',
+		'no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+		'react/jsx-one-expression-per-line': 'off',
+		'global-require': 'off',
+		'react-native/no-raw-text': 'off',
+		'no-param-reassign': 'off',
+		'no-underscore-dangle': 'off',
+		camelcase: 'off',
+		'no-console': ['error', {allow: ['tron']}],
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn',
+	},
+};
+
+7- colocar no prettier.rc
+
+{
+    "singleQuote": true,
+    "trailingComma": "es5"
+}
