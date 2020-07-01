@@ -1,3 +1,9 @@
+.colocar nas configurações do vscode para auto salvar
+
+  "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+
 0. Deletar prettier e eslint já existente.
 
 1. Instalar extenção editor config
